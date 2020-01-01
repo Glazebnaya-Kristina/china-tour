@@ -1,0 +1,149 @@
+.navigation {
+  $block-name: &; // #{$block-name}__element
+  display: none;
+
+  &__inner{
+    background-color: $white;
+    @media (min-width: $screen-md) {
+      padding-top: 24px;
+      padding-bottom: 105px;
+    }
+  }
+  
+  &__list-wrapper{
+    @media (min-width: $screen-md) {
+      @include container;
+      position: relative;
+    }
+  }
+
+  &__list {
+    @include ul-reset;
+    padding: 93px 38px 77px;
+    line-height: normal;
+    @media (min-width: $screen-md) {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+
+    }
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 421px 1fr 1fr;
+      padding: 60px 38px 77px 95px;
+    }
+
+
+    > li {
+      > a {
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        @media (min-width: $screen-lg) {
+          font-size: 18px;
+        }
+
+        &:hover,
+        &:focus {
+          outline: none;
+          color: $color-blue;
+          border-bottom: 1px solid $color-blue;
+        }
+      }
+
+      &:first-child{
+        @media (min-width: $screen-md) {
+          grid-row: 1 / 4;
+        }
+      }
+
+      &:not(:first-child) {
+        margin-top: 17px;
+        @media (min-width: $screen-md) {
+          margin-top: 0;
+          margin-bottom: 17px;
+        }
+      }
+
+      &:nth-child(4){
+        @media (min-width: $screen-md) {
+          grid-column: 3 / -1;
+          grid-row: 1 / 2;
+        }
+      }
+    }
+
+    ul {
+      @include ul-reset;
+      margin-left: 14px;
+      margin-top: 12px;
+      @media (min-width: $screen-md) {
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+
+      li {
+        &:not(:first-child) {
+          margin-top: 11px;
+        }
+      }
+
+      a {
+        font-size: 14px;
+        border-bottom: 1px solid transparent;
+        @media (min-width: $screen-lg) {
+          font-size: 16px;
+        }
+
+        &:hover,
+        &:focus {
+          outline: none;
+          color: $color-yellow;
+          border-bottom: 1px solid $color-yellow;
+        }
+      }
+    }
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    left: 17px;
+    top: 17px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: #b1b1b1;
+    font-size: 27px;
+    outline: none;
+    cursor: pointer;
+
+    @media (min-width: $screen-md) {
+      position: relative;
+      left: auto;
+      top: auto;
+    }
+
+    span {
+      @include hide-text;
+    }
+  }
+
+
+  &--opened {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .3);
+    animation: opacity 0.5s ease-in-out;
+
+    #{$block-name}__inner {
+      animation: slide-down 0.5s ease-in-out;
+    }
+
+    #{$block-name}__close {
+      display: block;
+    }
+  }
+}

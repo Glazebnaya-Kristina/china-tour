@@ -1,0 +1,28 @@
+// Подключения блоков
+//@import "blocks/time-flag";
+// поключения библиотек
+//@import "libs/title";
+// стили шаблонов
+@import "templates/header";
+@import "templates/footer";
+// поключения секций
+@import "sections/index/main-banner";
+@import "sections/index/about-us";
+
+
+//@media (min-width: $screen-sm) {}
+//@media (min-width: $screen-md) {}
+//@media (min-width: $screen-lg) {}
+//@media (min-width: $screen-xl) {}
+
+.page{
+  &__body{
+    background-image: url('../img/lines.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    @media (min-width: $screen-xl) {
+      background-image: url('../img/lines-desc.png');
+    }
+  }
+}
+

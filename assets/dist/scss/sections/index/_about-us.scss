@@ -1,0 +1,117 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+.about-us{
+  $block-name:                &; // #{$block-name}__element
+
+  padding: 47px 0;
+  @media (min-width: $screen-xl) {
+    padding: 84px 0 70px;
+    background-image: url('../img/home/about-us.png');
+    background-repeat: no-repeat;
+    background-position: right bottom -169px;;
+  }
+  &__inner{
+    @include container;
+    position: relative;
+  }
+
+  &__title{
+    text-align: center;
+  }
+
+  &__wrapper{
+    margin-top: 21px;
+    @media (min-width: $screen-xl) {
+      display: flex;
+      align-items: center;
+      margin-top: 52px;
+    }
+  }
+
+  &__description{
+    @media (min-width: $screen-xl) {
+      max-width: 612px;
+    }
+  }
+
+  p{
+    line-height: 27.5px;
+
+    &:last-of-type{
+      margin-top: 24px;
+    }
+  }
+
+  &__more-button{
+    margin-top: 31px;
+  }
+
+  &__card{
+    position: relative;
+    z-index: 1;
+    max-width: 290px;
+    margin: 0 auto;
+    margin-top: 38px;
+    padding: 16px 11px 27px;
+    border: 5px solid $color-blue;
+    background-color: $white;
+
+    @media (min-width: $screen-md) {
+      max-width: 443px;
+      padding: 36px 32px 27px;
+    }
+    @media (min-width: $screen-xl) {
+      margin: 0;
+      margin-left: 122px;
+    }
+
+    &:after,
+    &:before{
+      @include pseudo;
+      z-index: -1;
+      background-color: #f0f7fc;
+    }
+
+    &:after{
+      right: 0;
+      top: 0;
+      width: 41px;
+      height: 46px;
+    }
+
+    &:before{
+      left: 0;
+      bottom: 0;
+      width: 120px;
+      height: 80px;
+      @media (min-width: $screen-md) {
+        bottom: 90px;
+      }
+    }
+
+    strong{
+      display: block;
+      font-weight: 700;
+      font-size: 20px;
+      text-align: center;
+    }
+    
+    span{
+      color: $color-grey;
+    }
+
+    p{
+      max-width: 251px;
+      text-align: center;
+      @media (min-width: $screen-md) {
+        max-width: none;
+        text-align: left;
+      }
+    }
+  }
+
+  &__card-wrapper{
+    margin-top: 23px;
+  }
+}

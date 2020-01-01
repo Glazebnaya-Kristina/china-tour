@@ -1,0 +1,62 @@
+@import "../helper/variables";
+@import "../helper/mixins";
+@import "../helper/container-mixins";
+
+.header {
+  $block-name:                &; // #{$block-name}__element
+
+  padding: 20px 0;
+  border-bottom: 1px solid #e4e5e5;
+  background-color: $white;
+  &__inner{
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: $screen-md) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__list{
+    @include ul-reset;
+    display: none;
+    @media (min-width: $screen-md) {
+      display: block;
+      margin-left: 50px;
+    }
+    @media (min-width: $screen-xl) {
+      margin-left: 123px;
+    }
+    a{
+      font-weight: 700;
+      &:hover,
+      &:focus{
+        outline: none;
+        color: $color-yellow;
+      }
+    }
+  }
+
+  &__mail{
+    display: none;
+    @media (min-width: $screen-md) {
+      display: block;
+      margin-left: auto;
+    }
+    &:hover,
+    &:focus{
+      outline: none;
+      color: $color-yellow;
+    }
+  }
+
+  &__burger{
+    @media (min-width: $screen-md) {
+      margin-left: 50px;
+    }
+    @media (min-width: $screen-xl) {
+      margin-left: 90px;
+    }
+  }
+}
