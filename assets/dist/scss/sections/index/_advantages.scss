@@ -2,44 +2,70 @@
 @import "../../helper/mixins";
 
 
-.advantages{
-  $block-name:                &; // #{$block-name}__element
+.advantages {
+  $block-name: &; // #{$block-name}__element
 
+  position: relative;
   padding: 52px 0 30px;
   background-color: #f7f7f7;
   background-image: url('../img/lines.png');
   background-repeat: no-repeat;
   background-position: top center;
   @media (min-width: $screen-xl) {
+    padding: 95px 0 68px;
     background-image: url('../img/lines-desc.png');
+    background-position: top left 183px;
   }
 
-  &__inner{
+  &__inner {
     @include container;
   }
 
-  &__title{
+  &__title {
+    position: relative;
+    z-index: 1;
     padding: 0 15px;
     line-height: 36px;
     text-align: center;
+    @media (min-width: $screen-lg) {
+      text-align: left;
+    }
+    @media (min-width: $screen-xl) {
+      padding: 0;
+    }
   }
 
-  &__list{
+  &__list {
+    position: relative;
+    z-index: 1;
     margin-top: 50px;
+    @media (min-width: $screen-md) {
+      margin-left: 50px;
+      margin-top: 55px;
+    }
 
-    li{
-      &:not(:first-child){
+    li {
+      &:not(:first-child) {
         margin-top: 13px;
       }
     }
   }
 
-  &__blockquote{
+  &__blockquote {
     position: relative;
+    z-index: 1;
     margin-top: 50px;
     padding-left: 29px;
 
-    &:after{
+    @media (min-width: $screen-md) {
+      max-width: 545px;
+      margin-left: 120px;
+    }
+    @media (min-width: $screen-md) {
+      margin-top: 73px;
+    }
+
+    &:after {
       @include pseudo;
       left: 0;
       top: 0;
@@ -47,16 +73,30 @@
       height: 94px;
       background-color: $color-yellow;
     }
-    p{
+
+    p {
       font-size: 20px;
       font-weight: 700;
       line-height: 32px;
     }
   }
 
-  img{
+  img {
     @include img;
     height: 248px;
     margin-top: 41px;
+    @media (min-width: $screen-xl) {
+      position: absolute;
+      //right: 131px;
+      //bottom: -56px;
+      //width: 784px;
+      //width: 37%;
+      height: 488px;
+
+
+      right: 86px;
+      bottom: -54px;
+      width: 40.8%;
+    }
   }
 }
