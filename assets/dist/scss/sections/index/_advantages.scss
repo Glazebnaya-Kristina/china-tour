@@ -85,15 +85,12 @@
     @include img;
     height: 248px;
     margin-top: 41px;
+    @media (min-width: $screen-lg) {
+      height: 348px;
+    }
     @media (min-width: $screen-xl) {
       position: absolute;
-      //right: 131px;
-      //bottom: -56px;
-      //width: 784px;
-      //width: 37%;
       height: 488px;
-
-
       right: 86px;
       bottom: -54px;
       width: 40.8%;
