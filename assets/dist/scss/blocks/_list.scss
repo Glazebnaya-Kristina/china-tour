@@ -1,0 +1,16 @@
+.list{
+  @include ul-reset;
+  &--check{
+    li{
+      position: relative;
+      padding-left: 38px;
+      &:before{
+        @include pseudo;
+        content: '\e815';
+        font-family: "fontello";
+        left: 0;
+        color: $color-blue;
+      }
+    }
+  }
+}

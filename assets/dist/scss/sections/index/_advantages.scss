@@ -1,0 +1,62 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+
+.advantages{
+  $block-name:                &; // #{$block-name}__element
+
+  padding: 52px 0 30px;
+  background-color: #f7f7f7;
+  background-image: url('../img/lines.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  @media (min-width: $screen-xl) {
+    background-image: url('../img/lines-desc.png');
+  }
+
+  &__inner{
+    @include container;
+  }
+
+  &__title{
+    padding: 0 15px;
+    line-height: 36px;
+    text-align: center;
+  }
+
+  &__list{
+    margin-top: 50px;
+
+    li{
+      &:not(:first-child){
+        margin-top: 13px;
+      }
+    }
+  }
+
+  &__blockquote{
+    position: relative;
+    margin-top: 50px;
+    padding-left: 29px;
+
+    &:after{
+      @include pseudo;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 94px;
+      background-color: $color-yellow;
+    }
+    p{
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+  }
+
+  img{
+    @include img;
+    height: 248px;
+    margin-top: 41px;
+  }
+}

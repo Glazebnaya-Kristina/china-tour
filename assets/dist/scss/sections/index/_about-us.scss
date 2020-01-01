@@ -4,7 +4,7 @@
 .about-us{
   $block-name:                &; // #{$block-name}__element
 
-  padding: 47px 0;
+  padding: 47px 0 59px;
   @media (min-width: $screen-xl) {
     padding: 84px 0 70px;
     background-image: url('../img/home/about-us.png');
