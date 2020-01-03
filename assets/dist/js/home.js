@@ -76,7 +76,6 @@ $(document).ready(function () {
    });
 
 
-
    // ховер на секции Услуги
    $('.services__link-wrapper').on('mouseenter', function () {
       $(this).addClass('services__link-wrapper--active');
@@ -86,6 +85,33 @@ $(document).ready(function () {
    $('.services__list li').on('mouseleave', function () {
       $(this).children('.services__link-wrapper').removeClass('services__link-wrapper--active');
       $(this).children('p').removeClass('active-p');
-   })
+   });
 
+
+
+   // кнока подробнее
+   // ширина самого блока с текстом(видимый текст)
+   var defaultHeight = 240;
+   // ширина самого блока с текстом(видимый текст)
+   var text = $(".about-us__description");
+   var textHeight = text[0].scrollHeight;
+   var button = $(".about-us__more-button");
+   text.css({"max-height": defaultHeight, "overflow": "hidden"});
+
+   button.on("click", function () {
+      var newHeight = 0;
+      if (text.hasClass("about-us__description--active")) {
+         newHeight = defaultHeight;
+         text.removeClass("about-us__description--active");
+      } else {
+         newHeight = textHeight;
+         text.addClass("about-us__description--active");
+      }
+      //скорость анимации поднимание и опускание шторки
+      text.animate({
+         "max-height": newHeight
+      }, 500);
+      //скорость анимации поднимание и опускание шторки
+      console.log(newHeight);
+   });
 });

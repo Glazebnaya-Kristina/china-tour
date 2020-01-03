@@ -160,7 +160,6 @@
 
     h3{
       margin: 0;
-      //padding: 0 30px;
       font-size: 16px;
       font-weight: 700;
     }
@@ -191,6 +190,9 @@
   &__arrow{
     color: $color-blue;
     outline: none;
+    &:hover{
+      color: $color-yellow;
+    }
     &--prev{
       i{
         transform: rotate(-180deg);
