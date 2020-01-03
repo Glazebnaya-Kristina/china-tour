@@ -38,9 +38,6 @@ $(document).ready(function () {
    });
 
 
-
-
-
    var carouseladvantages = $('.our-advantages__carousel');
 
    carouseladvantages.on("init", function (event, slick) {
@@ -78,7 +75,17 @@ $(document).ready(function () {
       ]
    });
 
+
+
+   // ховер на секции Услуги
+   $('.services__link-wrapper').on('mouseenter', function () {
+      $(this).addClass('services__link-wrapper--active');
+      $(this).next().addClass('active-p');
+   });
+
+   $('.services__list li').on('mouseleave', function () {
+      $(this).children('.services__link-wrapper').removeClass('services__link-wrapper--active');
+      $(this).children('p').removeClass('active-p');
+   })
+
 });
-
-
-

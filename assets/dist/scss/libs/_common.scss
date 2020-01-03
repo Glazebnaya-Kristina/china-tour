@@ -47,6 +47,10 @@ body {
   overflow: hidden;
 }
 
+::selection{
+  background-color: rgba($color-blue, .5);
+}
+
 .anchor{
   @include hide-text;
 }

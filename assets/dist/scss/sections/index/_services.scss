@@ -2,7 +2,7 @@
 @import "../../helper/mixins";
 
 
-.services{
+.services {
   $block-name: &; // #{$block-name}__element
 
   position: relative;
@@ -17,7 +17,7 @@
     background-color: transparent;
   }
 
-  &:after{
+  &:after {
     @include pseudo;
     left: 0;
     top: 127px;
@@ -30,7 +30,8 @@
       display: block;
     }
   }
-  &:before{
+
+  &:before {
     @include pseudo;
     right: 0;
     bottom: 96px;
@@ -43,11 +44,12 @@
       display: block;
     }
   }
-  &__inner{
+
+  &__inner {
     @include container;
   }
 
-  &__title{
+  &__title {
     text-align: center;
     padding: 0 15px;
     line-height: 36px;
@@ -56,10 +58,10 @@
     }
   }
 
-  &__link-wrapper{
+  &__link-wrapper {
     position: relative;
 
-    &:before{
+    &:before {
       @include pseudo;
       left: 50%;
       top: 50%;
@@ -71,7 +73,8 @@
       background-position: center;
       transition: $transition-time;
     }
-    &:after{
+
+    &:after {
       @include pseudo;
       z-index: -1;
       opacity: 0;
@@ -85,9 +88,23 @@
       transition: $transition-time;
     }
 
+    &--active {
+      &:after {
+        z-index: 0;
+        opacity: 1;
+      }
+
+      &:before {
+        opacity: 0;
+      }
+
+      + p i{
+        color: $white;
+      }
+    }
   }
 
-  &__list{
+  &__list {
     margin-top: 38px;
     @media (min-width: $screen-md) {
       display: flex;
@@ -97,7 +114,7 @@
       margin-top: 87px;
     }
 
-    li{
+    li {
       position: relative;
       display: flex;
       justify-content: center;
@@ -106,42 +123,21 @@
         padding-bottom: 94px;
       }
 
-      &:not(:first-child){
+      &:not(:first-child) {
         margin-top: 40px;
         @media (min-width: $screen-md) {
           margin-top: 0;
         }
       }
 
-      &:nth-child(even){
+      &:nth-child(even) {
         @media (min-width: $screen-md) {
           margin-top: 38px;
         }
       }
-
-      &:hover{
-        #{$block-name}__link-wrapper{
-          &:after{
-            z-index: 0;
-            opacity: 1;
-          }
-          &:before{
-            opacity: 0;
-          }
-        }
-
-        p{
-          bottom: 119px;
-          color: $white;
-        }
-
-        i{
-          color: $white;
-        }
-      }
     }
 
-    p{
+    p {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -159,12 +155,17 @@
         font-size: 18px;
       }
 
-      a{
+      a {
         display: block;
       }
     }
 
-    i{
+    .active-p {
+      bottom: 119px;
+      color: $white;
+    }
+
+    i {
       margin-top: 10px;
       justify-content: center;
       color: $color-yellow;
@@ -175,7 +176,7 @@
       }
     }
 
-    img{
+    img {
       @include img;
       height: 454px;
       @media (min-width: $screen-xl) {
