@@ -43,6 +43,7 @@
 
   &--bg{
     color: $white;
+    font-weight: 700;
     background-color: $color-yellow;
     border: none;
     &:hover,
@@ -51,6 +52,11 @@
       background-color: $color-blue;
       border: none;
     }
+  }
+
+  &--big{
+    width: 221px;
+    height: 58px;
   }
 
   &--icon{

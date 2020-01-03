@@ -1,7 +1,7 @@
 // Подключения блоков
-//@import "blocks/time-flag";
+@import "blocks/step-count";
 // поключения библиотек
-//@import "libs/title";
+@import "libs/slick";
 // стили шаблонов
 @import "templates/header";
 @import "templates/footer";
@@ -10,6 +10,7 @@
 @import "sections/index/about-us";
 @import "sections/index/advantages";
 @import "sections/index/services";
+@import "sections/index/steps";
 
 
 //@media (min-width: $screen-sm) {}

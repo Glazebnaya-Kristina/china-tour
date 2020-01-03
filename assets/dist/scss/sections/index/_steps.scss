@@ -1,0 +1,250 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+
+.steps {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: 275px 0 54px;
+  background-image: url('../img/home/steps-bg-mob.png');
+  background-repeat: no-repeat;
+  background-position: top -48% left 39%;
+  background-size: 100% 552px;
+  @media (min-width: $screen-md) {
+    padding: 304px 0 54px;
+    background-image: url('../img/home/steps-bg.png');
+    background-position: top -425% left 39%;
+    background-size: auto;
+  }
+  @media (min-width: $screen-xl) {
+    margin-top: -202px;
+    padding: 506px 0 96px;
+    background-position: top -6% left 39%;
+    background-size: auto;
+  }
+  @media (min-width: 1921px){
+    background-size: 100% 900px;
+  }
+
+  &:after{
+    @include pseudo;
+    display: none;
+    content: 'Feel Easy';
+    bottom: -104px;
+    left: -22px;
+    z-index: -1;
+    font-size: 220px;
+    color: #efefef;
+    font-weight: 900;
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+  }
+
+  &__inner {
+    @include container;
+  }
+
+  &__description {
+    padding: 0 5px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 37px;
+  }
+
+  &__carousel {
+    margin-top: 37px;
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 91px;
+    }
+    li {
+      height: 290px;
+      @media (min-width: $screen-xl) {
+        position: relative;
+        margin-bottom: 17px;
+      }
+      &:after{
+        @include pseudo;
+        display: none;
+        width: 53px;
+        height: 68px;
+        background-repeat: no-repeat;
+        @media (min-width: $screen-xl) {
+          display: block;
+        }
+      }
+      &:nth-child(even){
+        @media (min-width: $screen-xl) {
+          margin-top: 105px;
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(6){
+        &:after{
+          @media (min-width: $screen-xl) {
+            bottom: 25px;
+            right: -80px;
+            transform: rotate(98deg);
+            background-image: url('../img/home/steps-odd.png');
+          }
+        }
+      }
+
+      &:nth-child(odd){
+        &:after{
+          @media (min-width: $screen-xl) {
+            top: 21px;
+            right: -79px;
+            background-image: url('../img/home/steps-odd.png');
+          }
+        }
+      }
+
+      &:nth-child(1){
+        #{$block-name}__wrapper-content{
+          &:after{
+            background-image: url('../img/home/steps1.png');
+          }
+        }
+      }
+      &:nth-child(2){
+        #{$block-name}__wrapper-content{
+          &:after{
+            background-image: url('../img/home/steps2.png');
+          }
+        }
+      }
+      &:nth-child(3){
+        #{$block-name}__wrapper-content{
+          &:after{
+            background-image: url('../img/home/steps3.png');
+          }
+        }
+      }
+      &:nth-child(4){
+        #{$block-name}__wrapper-content{
+          &:after{
+            background-image: url('../img/home/steps4.png');
+          }
+        }
+      }
+      &:nth-child(5){
+        #{$block-name}__wrapper-content{
+          &:after{
+            background-image: url('../img/home/steps5.png');
+          }
+        }
+      }
+      &:nth-child(6){
+        #{$block-name}__wrapper-content{
+          &:after{
+            background-image: url('../img/home/steps6.png');
+          }
+        }
+      }
+      &:nth-child(7){
+        #{$block-name}__wrapper-content{
+          &:after{
+            background-image: url('../img/home/steps7.png');
+          }
+        }
+      }
+      &:nth-child(8){
+        #{$block-name}__wrapper-content{
+          &:after{
+            background-image: url('../img/home/steps8.png');
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper-content {
+    position: relative;
+    max-width: 265px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 21px 16px 15px 35px;
+
+    &:after {
+      @include pseudo;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      //background-image: url('../img/home/steps1.png');
+      background-repeat: no-repeat;
+    }
+
+    &:before {
+      @include pseudo;
+      right: -14px;
+      bottom: -4px;
+      z-index: -1;
+      width: 261px;
+      height: 178px;
+      background-color: #f0f7fc;
+    }
+  }
+
+  &__wrapper-box {
+    margin-top: -24px;
+    color: $color-yellow;
+
+    b {
+      font-size: 88px;
+      font-weight: 900;
+    }
+
+    span {
+      margin-left: 10px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  &__text {
+    margin-top: 11px;
+    margin-left: 7px;
+    font-weight: 500;
+    &--special{
+      font-size: 15px;
+    }
+  }
+
+  &__wrapper-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 179px;
+    margin: 0 auto;
+    margin-top: 30px;
+    @media (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__arrow{
+    color: $color-blue;
+    outline: none;
+    &--prev{
+      i{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__button{
+    margin: 0 auto;
+    margin-top: 48px;
+    @media (min-width: $screen-xl) {
+      margin-top: 57px;
+    }
+  }
+}
