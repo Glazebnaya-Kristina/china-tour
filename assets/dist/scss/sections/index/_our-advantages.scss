@@ -1,0 +1,200 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+
+.our-advantages{
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: 56px 0 69px;
+  background-image: url('../img/home/our-advantages-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 400px;
+  background-color: #f7f7f7;
+  overflow: hidden;
+  @media (min-width: $screen-md) {
+    background-image: url('../img/home/our-advantages-bg-tablet.jpg');
+    background-size: auto 400px;
+  }
+  @media (min-width: $screen-lg) {
+    background-image: url('../img/home/our-advantages-bg-desc.jpg');
+    background-size: 100% 400px;
+    background-color: transparent;
+  }
+  @media (min-width: $screen-xl) {
+    padding: 100px 0 30px;
+    background-size: auto 645px;
+  }
+
+  &:after{
+    @include pseudo;
+    content: 'China Tour';
+    display: none;
+    right: -41px;
+    bottom: 225px;
+    z-index: -1;
+    font-size: 149px;
+    font-weight: 900;
+    color: #f1f1f1;
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+    @media (min-width: $screen-xl) {
+      right: -12px;
+      bottom: 35px;
+      font-size: 220px;
+    }
+  }
+  &__inner{
+    @include container;
+  }
+
+  &__title{
+    position: relative;
+    margin: 0;
+    padding-left: 21px;
+    font-size: 30px;
+    font-weight: 700;
+    color: $white;
+    line-height: 36px;
+    @media (min-width: $screen-md) {
+      max-width: 285px;
+    }
+    @media (min-width: $screen-lg) {
+      font-size: 32px;
+    }
+    @media (min-width: $screen-xl) {
+      margin-top: 79px;
+      padding-left: 31px;
+    }
+
+    &:after{
+      @include pseudo;
+      left: 0;
+      top: 4px;
+      width: 3px;
+      height: 66px;
+      background-color: $color-yellow;
+    }
+  }
+
+  &__description{
+    margin-top: 20px;
+    padding-left: 23px;
+    padding-right: 23px;
+    color: $white;
+    @media (min-width: $screen-md) {
+      max-width: 359px;
+      padding-right: 0;
+    }
+    @media (min-width: $screen-xl) {
+      padding-left: 32px;
+    }
+  }
+
+  &__carousel{
+    margin: 55px -15px 0;
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0;
+      margin-top: -240px;
+      padding: 0 21px;
+    }
+
+    li{
+      padding: 0 15px;
+      @media (min-width: $screen-md) {
+        margin: 0 10px;
+        padding: 0 15px;
+      }
+      @media (min-width: $screen-xl) {
+        margin: 0;
+        margin-bottom: 30px;
+        padding: 0;
+      }
+
+      &:first-child{
+        @media (min-width: $screen-xl) {
+          margin-left: 423px;
+        }
+      }
+    }
+  }
+
+  &__wrapper-content{
+    max-width: 393px;
+    height: 325px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: $white;
+    box-shadow: 0 2px 33px 0 rgba(0, 0, 0, 0.07);
+    @media (min-width: $screen-xl) {
+      height: 311px;
+    }
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 25px 21px 35px;
+    text-align: center;
+    border: 1px solid #eeeeee;
+    @media (min-width: $screen-xl) {
+      justify-content: stretch;
+      padding: 30px 21px 35px;
+    }
+
+    i{
+      margin-bottom: 20px;
+      font-size: 72px;
+      color: $color-blue;
+      @media (min-width: $screen-xl) {
+        margin-bottom: 26px;
+      }
+    }
+
+    h3{
+      margin: 0;
+      //padding: 0 30px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    p{
+      margin-top: 17px;
+      font-size: 14px;
+    }
+  }
+
+  &__button{
+    margin: 0 auto;
+    margin-top: -22px;
+  }
+
+  &__wrapper-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 179px;
+    margin: 0 auto;
+    margin-top: 30px;
+    @media (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__arrow{
+    color: $color-blue;
+    outline: none;
+    &--prev{
+      i{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}

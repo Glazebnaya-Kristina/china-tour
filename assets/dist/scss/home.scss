@@ -11,6 +11,7 @@
 @import "sections/index/advantages";
 @import "sections/index/services";
 @import "sections/index/steps";
+@import "sections/index/our-advantages";
 
 
 //@media (min-width: $screen-sm) {}
@@ -26,6 +27,7 @@
     @media (min-width: $screen-xl) {
       background-image: url('../img/lines-desc.png');
       background-position: top left 183px;
+      background-size: 86% 100%;
     }
   }
 }
