@@ -13,6 +13,7 @@
 @import "sections/index/steps";
 @import "sections/index/our-advantages";
 @import "sections/index/reviews";
+@import "sections/index/communication";
 
 
 //@media (min-width: $screen-sm) {}
@@ -25,6 +26,7 @@
     background-image: url('../img/lines.png');
     background-repeat: no-repeat;
     background-position: top center;
+    background-size: 90% 100%;
     @media (min-width: $screen-xl) {
       background-image: url('../img/lines-desc.png');
       background-position: top left 183px;

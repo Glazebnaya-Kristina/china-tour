@@ -11,6 +11,7 @@
   background-image: url('../img/lines.png');
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: 90% auto;
   @media (min-width: $screen-xl) {
     padding: 95px 0 68px;
     background-image: url('../img/lines-desc.png');

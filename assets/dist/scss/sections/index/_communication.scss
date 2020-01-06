@@ -1,0 +1,7 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+
+.communication{
+  $block-name: &; // #{$block-name}__element
+}

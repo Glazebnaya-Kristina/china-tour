@@ -63,6 +63,7 @@
     }
     li {
       height: 290px;
+      outline: none;
       @media (min-width: $screen-xl) {
         position: relative;
         margin-bottom: 17px;
@@ -168,8 +169,11 @@
     position: relative;
     max-width: 265px;
     height: 100%;
-    margin: 0 auto;
     padding: 21px 16px 15px 35px;
+
+    @media (min-width: 400px) {
+      margin: 0 auto;
+    }
 
     &:after {
       @include pseudo;
