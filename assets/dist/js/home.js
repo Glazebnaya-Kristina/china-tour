@@ -76,6 +76,38 @@ $(document).ready(function () {
    });
 
 
+   $('.reviews__carousel').slick({
+      mobileFirst: true,
+      infinite: true,
+      dots: true,
+      dotsClass: 'reviews__dots',
+      prevArrow: '<button type="button" class="slick-prev reviews__arrow reviews__arrow--prev"><i class="icon-angle-left"></i></button>',
+      nextArrow: '<button type="button" class="slick-prev reviews__arrow reviews__arrow--next"><i class="icon-angle-right"></i></button>',
+      responsive: [
+         {
+            breakpoint: 767,
+            settings: {
+               slidesToShow: 2
+            }
+         },
+         {
+            breakpoint: 1023,
+            settings: {
+               slidesToShow: 3,
+               centerMode: true,
+            }
+         },
+         {
+            breakpoint: 1429,
+            settings: {
+               centerMode: true,
+               variableWidth: true
+            }
+         }
+      ]
+   });
+
+
    // ховер на секции Услуги
    $('.services__link-wrapper').on('mouseenter', function () {
       $(this).addClass('services__link-wrapper--active');
@@ -92,17 +124,29 @@ $(document).ready(function () {
    // кнока подробнее
    // ширина самого блока с текстом(видимый текст)
    var defaultHeight = 240;
+   var defaultHeight2 = 460;
    // ширина самого блока с текстом(видимый текст)
    var text = $(".about-us__description");
    var textHeight = text[0].scrollHeight;
    var button = $(".about-us__more-button");
-   text.css({"max-height": defaultHeight, "overflow": "hidden"});
+   if (jQuery(window).width() >= 768){
+      text.css({"max-height": defaultHeight, "overflow": "hidden"});
+   } else if(jQuery(window).width() <= 767){
+      text.css({"max-height": defaultHeight2, "overflow": "hidden"});
+   }
 
    button.on("click", function () {
       var newHeight = 0;
       if (text.hasClass("about-us__description--active")) {
-         newHeight = defaultHeight;
-         text.removeClass("about-us__description--active");
+
+         if (jQuery(window).width() >= 768){
+            newHeight = defaultHeight;
+            text.removeClass("about-us__description--active");
+         } else if (jQuery(window).width() <= 767){
+            newHeight = defaultHeight2;
+            text.removeClass("about-us__description--active");
+         }
+
       } else {
          newHeight = textHeight;
          text.addClass("about-us__description--active");

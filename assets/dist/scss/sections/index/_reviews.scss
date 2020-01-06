@@ -1,0 +1,284 @@
+@import "../../helper/variables";
+@import "../../helper/mixins";
+
+
+.reviews{
+  $block-name: &; // #{$block-name}__element
+
+  padding: 48px 0 70px;
+  @media (min-width: $screen-lg) {
+    padding: 28px 0 70px;
+  }
+  &__inner{
+    @include container;
+  }
+
+  &__title{
+    text-align: center;
+  }
+
+  &__carousel{
+    position: relative;
+    margin: 0 -15px;
+    margin-top: 21px;
+    @media (min-width: $screen-lg) {
+      margin: 21px 0 0;
+    }
+    @media (min-width: $screen-xl) {
+      margin: 33px auto 0;
+    }
+    .slick-list{
+      padding: 20px 0;
+      padding-bottom: 34px;
+      @media (min-width: $screen-lg) {
+        padding: 0 !important;
+        transform: scale(0.9);
+        overflow: hidden;
+        margin: 0 auto;
+      }
+      @media (min-width: $screen-xl) {
+        transform: scale(1.12);
+        width: 1044px;
+      }
+    }
+    .slick-track{
+      @media (min-width: $screen-lg) {
+        padding: 25px 0;
+      }
+      > li{
+        position: relative;
+        padding: 0 15px;
+        outline: none;
+        @media (min-width: $screen-lg) {
+          height: 407px;
+        }
+        @media (min-width: $screen-xl) {
+          width: 344px;
+          height: 363px;
+        }
+        &:after{
+          @include pseudo;
+          left: 30px;
+          top: 20px;
+          z-index: -1;
+          width: 91%;
+          height: 103%;
+          background-color: #f0f7fc;
+          @media (min-width: $screen-lg) {
+            opacity: 0;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .slick-center{
+      #{$block-name}__wrapper-description{
+        @media (min-width: $screen-lg) {
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          padding: 93px 32px 27px 38px;
+        }
+        p{
+          @media (min-width: $screen-lg) {
+            margin: 0;
+            opacity: 1;
+          }
+        }
+      }
+      #{$block-name}__wrapper-content{
+        @media (min-width: $screen-lg) {
+          border: 5px solid $color-yellow;
+        }
+        &:after{
+          @media (min-width: $screen-lg) {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    li.slick-center{
+      &:after{
+        @media (min-width: $screen-lg) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  &__arrow{
+    position: absolute;
+    bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    background-color: $color-blue;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: $transition-time;
+    &:hover{
+      background-color: $color-yellow;
+    }
+    @media (min-width: $screen-lg) {
+      bottom: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--prev{
+      left: 15px;
+      z-index: 1;
+      @media (min-width: $screen-lg) {
+        left: 0;
+      }
+    }
+    &--next{
+      right: 15px;
+      @media (min-width: $screen-lg) {
+        right: 0;
+      }
+    }
+    i{
+      font-size: 22px;
+      color: $white;
+    }
+  }
+
+  &__dots{
+    @include ul-reset;
+    display: flex;
+    justify-content: center;
+    margin-top: 19px;
+    @media (min-width: $screen-lg) {
+      margin-top: 47px;
+    }
+
+    li{
+      &:not(:first-child){
+        margin-left: 20px;
+      }
+    }
+
+    .slick-active{
+      button{
+        border: 4px solid $color-blue;
+      }
+    }
+
+    button{
+      width: 14px;
+      height: 14px;
+      padding: 0;
+      background-color: $white;
+      border: 1px solid $color-blue;
+      border-radius: 50%;
+      font-size: 0;
+      outline: none;
+      transition: $transition-time;
+      cursor: pointer;
+    }
+  }
+
+  &__wrapper-content{
+    position: relative;
+    max-width: 344px;
+    height: 100%;
+    padding: 20px 20px 34px;
+    border: 5px solid $color-yellow;
+    background-color: $white;
+    @media (min-width: $screen-lg) {
+      position: relative;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+    }
+    &:after{
+      @include pseudo;
+      right: 52px;
+      top: 27px;
+      width: 74px;
+      height: 58px;
+      background-image: url('../img/home/kavychki.png');
+      background-repeat: no-repeat;
+      transition: $transition-time;
+      @media (min-width: $screen-lg) {
+        opacity: 0;
+        right: 0;
+        left: 35px;
+        top: 21px;
+        width: 78px;
+        height: 52px;
+        background-size: contain;
+      }
+    }
+
+    img{
+      width: 84px;
+      margin-top: -35px;
+      @media (min-width: $screen-lg) {
+        @include img;
+        margin: 0;
+      }
+    }
+  }
+
+  &__wrapper-description{
+    @media (min-width: $screen-lg) {
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column-reverse;
+      width: 152px;
+      height: 72px;
+      padding: 19px 14px;
+      background-color: $white;
+      transform-origin: bottom left;
+      transition: $transition-time;
+    }
+
+    p{
+      margin-top: 20px;
+      line-height: 22px;
+      font-size: 14px;
+      transition: $transition-time;
+      @media (min-width: $screen-lg) {
+        opacity: 0;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  &__author{
+    display: flex;
+    flex-direction: column;
+    margin-top: 26px;
+    @media (min-width: $screen-lg) {
+      margin: 0;
+    }
+
+    strong{
+      font-size: 14px;
+      font-weight: 700;
+      @media (min-width: $screen-lg) {
+        font-size: 12.8px;
+      }
+    }
+
+    span{
+      margin-top: 4px;
+      font-size: 12px;
+      color: #9d9d9d;
+      font-style: italic;
+    }
+  }
+}
