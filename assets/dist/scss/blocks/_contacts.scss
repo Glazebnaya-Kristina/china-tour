@@ -1,0 +1,60 @@
+@import "../helper/variables";
+@import "../helper/mixins";
+
+
+.contacts{
+  a{
+    &:hover{
+      color: $color-yellow;
+    }
+  }
+  strong {
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__wrapper-link {
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child){
+      margin-top: 4px;
+    }
+
+    i {
+      color: $color-yellow;
+    }
+
+    a {
+      margin-left: 3px;
+      font-size: 18px;
+    }
+  }
+
+  &__messenger-list {
+    display: flex;
+    align-items: center;
+    margin-left: -6px;
+
+    li{
+      &:not(:first-child){
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__messenger-link {
+    i {
+      font-size: 25px;
+      color: $color-blue;
+      &:hover{
+        color: $color-yellow;
+      }
+    }
+  }
+
+  &__messenger-name {
+    @include hide-text;
+  }
+}

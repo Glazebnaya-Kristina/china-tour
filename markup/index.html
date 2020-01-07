@@ -367,7 +367,79 @@
     <!-- Секция Контакты -->
     <section class="communication">
         <div class="communication__inner">
-
+            <div class="communication__contacts">
+                <h2 class="title communication__title">Контакты</h2>
+                <ul class="communication__contacts-list list contacts">
+                    <li>
+                        <strong>Телефон:</strong>
+                        <p class="contacts__wrapper-link"><i class="icon-call-answer"></i><a href="tel:+71234567889">+7 123 456
+            78 89</a></p>
+                        <p class="contacts__wrapper-link"><i class="icon-call-answer"></i><a href="tel:+71234567889">+7 123 456
+            78 89</a></p>
+                    </li>
+                    <li>
+                        <strong>Почта:</strong>
+                        <p class="contacts__wrapper-link"><i class="icon-mail-alt communication__icon-email"></i><a href="mailto:mail@mail.ru">mail@mail.ru</a></p>
+                    </li>
+                    <li>
+                        <strong>Мессенджеры:</strong>
+                        <ul class="list contacts__messenger-list">
+                            <li>
+                                <a class="contacts__messenger-link" href="#">
+                <span class="contacts__messenger-name">Telegram</span>
+                <i class="icon-telegram"></i>
+              </a>
+                            </li>
+                            <li>
+                                <a class="contacts__messenger-link" href="#">
+                <span class="contacts__messenger-name">whatsapp</span>
+                <i class=" icon-whatsapp-1"></i>
+              </a>
+                            </li>
+                            <li>
+                                <a class="contacts__messenger-link" href="#">
+                <span class="contacts__messenger-name">wechat</span>
+                <i class="icon-wechat"></i>
+              </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="communication__feedback">
+                <h3 class="communication__feedback-subtitle">Оставьте заявку</h3>
+                <p class="communication__feedback-description">И мы свяжемся с вами</p>
+                <form action="/" class="communication__form form">
+                    <ul class="communication__form-list list">
+                        <li>
+                            <label class="label">
+              <span class="label__name">Ваше имя</span>
+              <input type="text" class="input communication__feedback-input" required>
+              <span class="text-error">Неверное Имя</span>
+            </label>
+                        </li>
+                        <li>
+                            <label class="label">
+              <span class="label__name">Ваша почта</span>
+              <input type="email" class="input communication__feedback-input" required>
+              <span class="text-error">Неверный адрес почты</span>
+            </label>
+                        </li>
+                        <li>
+                            <label class="label">
+              <span class="label__name">Ваше сообщение</span>
+              <textarea class="input input--textarea communication__feedback-input" required></textarea>
+              <span class="text-error">Неведенное сообщение</span>
+            </label>
+                        </li>
+                    </ul>
+                    <button type="button" class="button button--bg button--big communication__button">Отправить</button>
+                    <p class="communication__wrapper-policy">
+                        <span>Нажимая на кнопку, вы соглашаетесь с</span>
+                        <a href="#">Политикой конфиденциальности</a>
+                    </p>
+                </form>
+            </div>
         </div>
     </section>
 

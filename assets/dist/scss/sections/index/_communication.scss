@@ -2,6 +2,99 @@
 @import "../../helper/mixins";
 
 
-.communication{
+.communication {
   $block-name: &; // #{$block-name}__element
+
+  padding: 46px 0 60px;
+  background: rgb(247,247,247);
+  background: linear-gradient(180deg, rgba(247,247,247,1) 41%, rgba(240,247,252,1) 41%);
+  &__inner {
+    @include container;
+  }
+  
+  &__contacts{
+    margin-bottom: 45px;
+    //background-color: #f7f7f7;
+  }
+
+  &__title{
+    font-size: 36px;
+  }
+
+  &__contacts-list {
+    margin-top: 25px;
+
+    > li {
+      &:not(:first-child) {
+        margin-top: 36px;
+      }
+    }
+
+    strong {
+      margin-bottom: 11px;
+    }
+  }
+
+  &__icon-email{
+    margin-right: 11px;
+  }
+
+  &__feedback{
+    margin-top: 98px;
+  }
+
+  &__form{
+    margin-top: 30px;
+  }
+
+  &__feedback-subtitle{
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__feedback-description{
+    //margin-top: 10px;
+  }
+
+  &__feedback-input{
+    margin-top: 5px;
+  }
+
+  &__form-list{
+    li{
+      &:not(:first-child){
+        margin-top: 8px;
+      }
+    }
+
+    .input--textarea{
+      height: 105px;
+    }
+  }
+
+  &__button{
+    margin-top: 23px;
+  }
+
+  &__wrapper-policy{
+    margin-top: 12px;
+    padding-right: 47px;
+    font-size: 12px;
+    span{
+      color: $color-grey;
+    }
+    a{
+      display: inline;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: rgba($color-black, .4);
+      -moz-text-decoration-color: rgba($color-black, .4);
+      &:hover{
+        color: #b1b1b1;
+        text-decoration-color: rgba(#b1b1b1, .4);
+        -moz-text-decoration-color: rgba(#b1b1b1, .4);
+      }
+    }
+  }
 }
