@@ -6,13 +6,21 @@
   align-items: center;
 
   a{
+    padding: 6px 4px;
+    border-radius: 50%;
+    background-color: $color-blue;
     &:hover,
     &:focus {
       outline: none;
+      background-color: $color-yellow;
     }
   }
 
   &__name {
     @include hide-text;
+  }
+
+  i{
+    color: $white;
   }
 }

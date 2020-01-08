@@ -5,16 +5,49 @@
 .communication {
   $block-name: &; // #{$block-name}__element
 
+  position: relative;
   padding: 46px 0 60px;
   background: rgb(247,247,247);
   background: linear-gradient(180deg, rgba(247,247,247,1) 41%, rgba(240,247,252,1) 41%);
+  @media (min-width: $screen-lg) {
+    background: linear-gradient(90deg, rgba(247,247,247,1) 38%, rgba(240,247,252,1) 38%);
+  }
+  @media (min-width: $screen-xl) {
+    padding: 86px 0 60px;
+
+    background: linear-gradient(90deg, rgba(247,247,247,1) 50%, rgba(240,247,252,1) 50%);
+  }
+  &:after{
+    @include pseudo;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/lines-desc.png');
+    background-position: top left 183px;
+    background-size: 86% auto;
+    opacity: .5;
+
+    //@media (min-width: $screen-xl) {
+    //
+    //}
+  }
   &__inner {
     @include container;
+    position: relative;
+    z-index: 2;
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   
   &__contacts{
     margin-bottom: 45px;
-    //background-color: #f7f7f7;
+    @media (min-width: $screen-xl) {
+      flex-basis: 50%;
+    }
   }
 
   &__title{
@@ -23,10 +56,36 @@
 
   &__contacts-list {
     margin-top: 25px;
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    @media (min-width: $screen-xl) {
+      flex-wrap: wrap;
+      justify-content: stretch;
+      margin-top: 78px;
+    }
 
     > li {
+      @media (min-width: $screen-xl) {
+        flex-basis: 50%;
+      }
       &:not(:first-child) {
         margin-top: 36px;
+        @media (min-width: $screen-xl) {
+          margin-top: 0;
+        }
+      }
+      &:last-child{
+        @media (min-width: $screen-xl) {
+          margin-top: 45px;
+        }
+      }
+      &:nth-child(2){
+        @media (min-width: $screen-xl) {
+          padding-left: 17px;
+        }
       }
     }
 
@@ -41,10 +100,18 @@
 
   &__feedback{
     margin-top: 98px;
+    @media (min-width: $screen-xl) {
+      flex-basis: 50%;
+      margin-top: 0;
+      padding-left: 90px;
+    }
   }
 
   &__form{
     margin-top: 30px;
+    @media (min-width: $screen-xl) {
+      margin-top: 33px;
+    }
   }
 
   &__feedback-subtitle{
@@ -53,18 +120,31 @@
     font-weight: 700;
   }
 
-  &__feedback-description{
-    //margin-top: 10px;
-  }
-
   &__feedback-input{
     margin-top: 5px;
   }
 
   &__form-list{
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
     li{
+      @media (min-width: $screen-md) {
+        flex-basis: 47%;
+      }
       &:not(:first-child){
         margin-top: 8px;
+        @media (min-width: $screen-xl) {
+          margin-top: 0;
+        }
+      }
+      &:last-child{
+        @media (min-width: $screen-md) {
+          flex-basis: 100%;
+        }
       }
     }
 
@@ -73,14 +153,33 @@
     }
   }
 
+  &__feedback-wrapper{
+    @media (min-width: $screen-md) {
+      margin-top: 23px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &__button{
     margin-top: 23px;
+    @media (min-width: $screen-md) {
+      display: inline-flex;
+      margin: 0;
+    }
   }
 
   &__wrapper-policy{
     margin-top: 12px;
     padding-right: 47px;
     font-size: 12px;
+    @media (min-width: $screen-md) {
+      display: inline-block;
+      max-width: 235px;
+      margin-left: 25px;
+      margin-top: 0;
+      padding-right: 0;
+    }
     span{
       color: $color-grey;
     }
@@ -90,10 +189,12 @@
       text-decoration: underline;
       text-decoration-color: rgba($color-black, .4);
       -moz-text-decoration-color: rgba($color-black, .4);
-      &:hover{
+      &:hover,
+      &:focus{
         color: #b1b1b1;
         text-decoration-color: rgba(#b1b1b1, .4);
         -moz-text-decoration-color: rgba(#b1b1b1, .4);
+        outline: none;
       }
     }
   }

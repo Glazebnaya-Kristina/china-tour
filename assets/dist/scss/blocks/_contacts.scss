@@ -4,7 +4,9 @@
 
 .contacts{
   a{
-    &:hover{
+    &:hover,
+    &:focus{
+      outline: none;
       color: $color-yellow;
     }
   }
@@ -45,6 +47,12 @@
   }
 
   &__messenger-link {
+    outline: none;
+    &:focus{
+      i{
+        color: $color-yellow;
+      }
+    }
     i {
       font-size: 25px;
       color: $color-blue;
