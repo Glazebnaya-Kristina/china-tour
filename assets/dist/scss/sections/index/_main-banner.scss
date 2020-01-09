@@ -167,7 +167,7 @@
   &__dots-list{
     display: flex;
     align-items: center;
-    max-width: 101px;
+    max-width: 106px;
     margin: 0 auto;
 
     li{
@@ -175,6 +175,9 @@
       height: 2px;
       flex-basis: 50%;
       flex-grow: 1;
+      &:first-child{
+        margin-left: 5px;
+      }
     }
     button{
       height: 100%;
@@ -183,6 +186,7 @@
       border: none;
       background-color: #e1e6ea;
       font-size: 0;
+      transition: $transition-time;
     }
     .slick-active{
       button{

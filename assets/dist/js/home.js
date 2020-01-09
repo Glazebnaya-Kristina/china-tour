@@ -126,6 +126,8 @@ $(document).ready(function () {
       appendDots: $('.main-banner__carousel-controls'),
       dotsClass: 'main-banner__dots-list list',
       mobileFirst: true,
+      fade: true,
+      cssEase: 'linear',
       responsive: [
 
          {
