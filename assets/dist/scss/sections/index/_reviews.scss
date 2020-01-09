@@ -193,9 +193,13 @@
     background-color: $white;
     @media (min-width: $screen-lg) {
       position: relative;
+      max-width: 274px;
       padding: 0;
       background-color: transparent;
       border: none;
+    }
+    @media (min-width: $screen-xl) {
+      max-width: 344px;
     }
     &:after{
       @include pseudo;

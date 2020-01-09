@@ -91,19 +91,25 @@ $(document).ready(function () {
             }
          },
          {
-            breakpoint: 1023,
+            breakpoint: 1022,
             settings: {
-               slidesToShow: 3,
-               centerMode: true,
+               slidesToShow: 3
             }
          },
          {
-            breakpoint: 1429,
+            breakpoint: 1023,
             settings: {
                centerMode: true,
                variableWidth: true
             }
          }
+         // {
+         //    breakpoint: 1429,
+         //    settings: {
+         //       centerMode: true,
+         //       variableWidth: true
+         //    }
+         // }
       ]
    });
 
