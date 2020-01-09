@@ -5,16 +5,211 @@
 .main-banner{
   $block-name:                &; // #{$block-name}__element
 
-  height: 600px;
-  background-color: #4e4a47;
+  //height: 600px;
+  //background-color: #4e4a47;
   @media (min-width: $screen-xl) {
-    height: 900px;
+    //height: 900px;
   }
   &__inner{
+    //@include container;
+  }
+
+  &__title{
+    @include hide-text;
+  }
+
+  &__carousel{
+    li{
+      position: relative;
+      padding: 49px 0 50px;
+      color: $white;
+    }
+
+    img{
+      @include img;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+
+    h2{
+      margin: 0;
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: 700;
+    }
+
+    h3{
+      margin: 0;
+      margin-top: 10px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  &__item-content{
     @include container;
+
+    > p {
+      margin-top: 47px;
+      padding-right: 25px;
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+    > strong {
+      font-weight: 700;
+    }
   }
 
   &__title{
     margin: 0;
+  }
+
+  &__wrapper-buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+  }
+
+  &__more{
+    width: 162px;
+    height: 55px;
+    font-size: 14px;
+  }
+
+  &__wrapper-video{
+    margin-left: 20px;
+  }
+
+  &__button-video{
+    outline: none;
+    align-items: baseline;
+    svg{
+      width: 8px;
+      height: 11px;
+    }
+    path {
+      fill: $color-yellow;
+      stroke: $color-yellow;
+      stroke-width: 1;
+    }
+
+    span{
+      max-width: 85px;
+      margin-left: 8px;
+      font-size: 13px;
+      color: $color-yellow;
+      line-height: 20px;
+      text-decoration: underline;
+      text-decoration-color: rgba($color-yellow, .3);
+      -moz-text-decoration-color: rgba($color-yellow, .3);
+      white-space: pre-wrap;
+    }
+  }
+
+  &__arrow{
+    position: absolute;
+    bottom: -43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: $color-blue;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: $transition-time;
+    &:hover{
+      background-color: $color-yellow;
+    }
+    @media (min-width: $screen-lg) {
+      bottom: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--prev{
+      left: 29px;
+      z-index: 1;
+      @media (min-width: $screen-lg) {
+        //left: 0;
+      }
+      i{
+        margin-right: 4px;
+      }
+    }
+    &--next{
+      left: 77px;
+      @media (min-width: $screen-lg) {
+        //right: 0;
+      }
+      i{
+        margin-left: 4px;
+      }
+    }
+    i{
+      font-size: 18px;
+      color: $white;
+    }
+  }
+
+  &__carousel-controls{
+    position: relative;
+    max-width: 199px;
+    margin-left: auto;
+    padding: 24px 0;
+    background-color: #edf4f9;
+  }
+
+  &__dots-list{
+    display: flex;
+    align-items: center;
+    max-width: 101px;
+    margin: 0 auto;
+
+    li{
+      display: flex;
+      height: 2px;
+      flex-basis: 50%;
+      flex-grow: 1;
+    }
+    button{
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      border: none;
+      background-color: #e1e6ea;
+      font-size: 0;
+    }
+    .slick-active{
+      button{
+        background-color: $color-yellow;
+      }
+    }
+  }
+
+  &__step-count{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 23px;
+    padding-right: 14px;
+    span{
+      font-size: 14px;
+      color: $color-black;
+      font-weight: 700;
+    }
+  }
+
+  &__count{
+    &--slick{
+    }
   }
 }

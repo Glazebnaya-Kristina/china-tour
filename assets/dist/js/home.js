@@ -108,6 +108,46 @@ $(document).ready(function () {
    });
 
 
+   var carouselMain = $('.main-banner__carousel');
+
+   carouselMain.on("init", function (event, slick) {
+      $(".step-count--main").html('<span class="main-banner__count">0' + (slick.currentSlide + 1) + '</span>' + '<span class="main-banner__count main-banner__count--slick">0' + slick.slideCount + '</span>');
+   });
+
+   carouselMain.on("afterChange", function (event, slick, currentSlide) {
+      $(".step-count--main").html('<span class="main-banner__count">0' + (slick.currentSlide + 1) + '</span>' + '<span class="main-banner__count main-banner__count--slick">0' + slick.slideCount + '</span>');
+   });
+
+
+   carouselMain.slick({
+      prevArrow: '<button type="button" class="slick-prev main-banner__arrow main-banner__arrow--prev"><i class="icon-angle-left"></i></button>',
+      nextArrow: '<button type="button" class="slick-prev main-banner__arrow main-banner__arrow--next"><i class="icon-angle-right"></i></button>',
+      dots: true,
+      appendDots: $('.main-banner__carousel-controls'),
+      dotsClass: 'main-banner__dots-list list',
+      mobileFirst: true,
+      responsive: [
+
+         {
+            breakpoint: 767,
+            settings: {
+               slidesToShow: 2
+            }
+         },
+         {
+            breakpoint: 1023,
+            settings: {
+               slidesToShow: 3
+            }
+         },
+         {
+            breakpoint: 1339,
+            settings: "unslick"
+         }
+      ]
+   });
+
+
    // ховер на секции Услуги
    $('.services__link-wrapper').on('mouseenter', function () {
       $(this).addClass('services__link-wrapper--active');
