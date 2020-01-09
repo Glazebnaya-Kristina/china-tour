@@ -3,10 +3,29 @@
   display: none;
 
   &__inner{
+    position: relative;
+    z-index: 1;
     background-color: $white;
     @media (min-width: $screen-md) {
       padding-top: 24px;
       padding-bottom: 105px;
+    }
+  }
+  
+  &__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .3);
+    animation: opacity 0.5s ease-in-out;
+    &--opened{
+      z-index: 0;
+      opacity: 1;
     }
   }
   
@@ -144,8 +163,8 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-color: rgba($black, .3);
-    animation: opacity 0.5s ease-in-out;
+    //background-color: rgba($black, .3);
+    //animation: opacity 0.5s ease-in-out;
 
     #{$block-name}__inner {
       animation: slide-down 0.5s ease-in-out;

@@ -5,13 +5,40 @@ $(document).ready(function () {
 
       $('.menu-burger').addClass('menu-burger--open');
       $('.navigation').addClass('navigation--opened');
-      $('body').addClass('hidden')
+      $('body').addClass('hidden');
+      $('.navigation__overlay').addClass('navigation__overlay--opened');
    });
 
    $('.navigation__close').on('click', function () {
       $('.menu-burger').removeClass('menu-burger--open');
       $('.navigation').removeClass('navigation--opened');
-      $('body').removeClass('hidden')
+      $('body').removeClass('hidden');
+   });
+
+   $('.navigation__overlay').on('click', function () {
+      $('.menu-burger').removeClass('menu-burger--open');
+      $('.navigation').removeClass('navigation--opened');
+      $('body').removeClass('hidden');
+      $('.navigation__overlay').removeClass('navigation__overlay--opened');
+   });
+
+   $('.navigation__list a').on('click', function () {
+      $('.menu-burger').removeClass('menu-burger--open');
+      $('.navigation').removeClass('navigation--opened');
+      $('body').removeClass('hidden');
+      $('.navigation__overlay').removeClass('navigation__overlay--opened');
+   });
+
+   $(window).keyup(function (e) {
+      var key = e.keyCode;
+
+      if (key == 27) {
+
+         $('.menu-burger').removeClass('menu-burger--open');
+         $('.navigation').removeClass('navigation--opened');
+         $('body').removeClass('hidden');
+         $('.navigation__overlay').removeClass('navigation__overlay--opened');
+      }
    });
 
    //якорные ссылки
