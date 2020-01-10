@@ -133,26 +133,26 @@ $(document).ready(function () {
       dotsClass: 'main-banner__dots-list list',
       mobileFirst: true,
       fade: true,
-      cssEase: 'linear',
-      responsive: [
-
-         {
-            breakpoint: 767,
-            settings: {
-               slidesToShow: 2
-            }
-         },
-         {
-            breakpoint: 1023,
-            settings: {
-               slidesToShow: 3
-            }
-         },
-         {
-            breakpoint: 1339,
-            settings: "unslick"
-         }
-      ]
+      cssEase: 'linear'
+      // responsive: [
+      //
+      //    {
+      //       breakpoint: 767,
+      //       settings: {
+      //          slidesToShow: 2
+      //       }
+      //    },
+      //    {
+      //       breakpoint: 1023,
+      //       settings: {
+      //          slidesToShow: 3
+      //       }
+      //    },
+      //    {
+      //       breakpoint: 1339,
+      //       settings: "unslick"
+      //    }
+      // ]
    });
 
 
