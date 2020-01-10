@@ -103,13 +103,6 @@ $(document).ready(function () {
                variableWidth: true
             }
          }
-         // {
-         //    breakpoint: 1429,
-         //    settings: {
-         //       centerMode: true,
-         //       variableWidth: true
-         //    }
-         // }
       ]
    });
 
@@ -133,26 +126,19 @@ $(document).ready(function () {
       dotsClass: 'main-banner__dots-list list',
       mobileFirst: true,
       fade: true,
-      cssEase: 'linear'
-      // responsive: [
-      //
-      //    {
-      //       breakpoint: 767,
-      //       settings: {
-      //          slidesToShow: 2
-      //       }
-      //    },
-      //    {
-      //       breakpoint: 1023,
-      //       settings: {
-      //          slidesToShow: 3
-      //       }
-      //    },
-      //    {
-      //       breakpoint: 1339,
-      //       settings: "unslick"
-      //    }
-      // ]
+      cssEase: 'linear',
+      asNavFor: '.main-banner__carousel-nav'
+   });
+
+   $('.main-banner__carousel-nav').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.main-banner__carousel',
+      dots: false,
+      arrows: false,
+      focusOnSelect: true,
+      variableWidth: true
    });
 
 

@@ -26,14 +26,17 @@
   }
   &__inner{
     position: relative;
+    @media (min-width: $screen-xl) {
+      overflow: hidden;
+    }
     &:after{
       @include pseudo;
       right: 0;
-      top: 0;
+      top: -98px;
       z-index: -1;
       display: none;
       width: 510px;
-      height: 100%;
+      height: 111%;
       background-image: url('../img/home/main-banner-decor.jpg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -49,7 +52,7 @@
 
   &__carousel{
     @media (min-width: $screen-xl) {
-      max-width: 73.5%;
+      max-width: 73.8%;
     }
     li{
       position: relative;
@@ -57,10 +60,20 @@
       padding: 49px 0 50px;
       color: $white;
       @media (min-width: $screen-lg) {
-        padding: 215px 0 50px;
+        padding: 211px 0 50px;
       }
       @media (min-width: $screen-xl) {
         padding-bottom: 120px;
+      }
+
+      &:after{
+        @include pseudo;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000, .6);
       }
     }
 
@@ -95,6 +108,10 @@
       margin-top: 10px;
       font-weight: 500;
       font-size: 18px;
+      @media (min-width: $screen-xl) {
+        margin-top: 14px;
+        font-size: 24px;
+      }
     }
   }
 
@@ -104,7 +121,7 @@
       width: 651px;
       margin: 0;
       margin-left: auto;
-      margin-right: 30%;
+      margin-right: 31.5%;
     }
 
     > p {
@@ -118,7 +135,7 @@
         font-size: 16px;
       }
       @media (min-width: $screen-lg) {
-        margin-top: 115px;
+        margin-top: 128px;
       }
     }
 
@@ -136,7 +153,7 @@
     align-items: center;
     margin-top: 45px;
     @media (min-width: $screen-lg) {
-      margin-top: 80px;
+      margin-top: 85px;
     }
   }
 
@@ -144,6 +161,9 @@
     width: 162px;
     height: 55px;
     font-size: 14px;
+    @media (min-width: $screen-lg) {
+      width: 209px;
+    }
   }
 
   &__wrapper-video{
@@ -182,7 +202,7 @@
   &__video-container{
     display: none;
     position: absolute;
-    right: 10%;
+    right: 9%;
     top: 30%;
     @media (min-width: $screen-lg) {
       display: block;
@@ -377,6 +397,14 @@
     @media (min-width: $screen-lg) {
       bottom: -40px;
     }
+    @media (min-width: $screen-xl) {
+      bottom: 5px;
+      width: 37px;
+      height: 37px;
+    }
+    @media (min-width: 1900px) {
+      bottom: 96px;
+    }
 
     &--prev{
       left: 29px;
@@ -385,8 +413,17 @@
         left: auto;
         right: 25%;
       }
+      @media (min-width: $screen-xl) {
+        right: 25px;
+      }
+      @media (min-width: 1900px) {
+        right: 34.8%;
+      }
       i{
         margin-right: 4px;
+        @media (min-width: $screen-xl) {
+          margin-right: 3px;
+        }
       }
     }
     &--next{
@@ -395,13 +432,26 @@
         left: auto;
         right: 20%;
       }
+      @media (min-width: $screen-xl) {
+        right: -55px;
+      }
+      @media (min-width: 1900px) {
+        right: 34.8%;
+        bottom: 148px;
+      }
       i{
         margin-left: 4px;
+        @media (min-width: $screen-xl) {
+          margin-left: 3px;
+        }
       }
     }
     i{
       font-size: 18px;
       color: $white;
+      @media (min-width: $screen-xl) {
+        font-size: 26px;
+      }
     }
   }
 
@@ -413,14 +463,13 @@
     background-color: #edf4f9;
     @media (min-width: $screen-xl) {
       position: absolute;
-      right: 22%;
-      top: 50%;
-      transform: translateY(-50%);
+      right: 20.2%;
+      top: 27%;
       display: flex;
       align-items: center;
       max-width: 50px;
       width: 100%;
-      height: 350px;
+      height: 345px;
       padding: 0;
       background: none;
     }
@@ -436,7 +485,7 @@
       flex-direction: column;
       max-width: none;
       width: 100%;
-      height: 248px;
+      height: 241px;
     }
 
     li{
@@ -503,6 +552,29 @@
           color: $color-yellow;
         }
       }
+    }
+  }
+
+  &__carousel-nav{
+    display: none;
+    position: absolute;
+    right: -50px;
+    bottom: 47px;
+    max-width: 1000px;
+    width: 100%;
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+    li{
+      width: 315px;
+      margin: 0 15px;
+      outline: none;
+      cursor: pointer;
+    }
+    img{
+      @include img;
+      width: 315px;
+      height: 206px;
     }
   }
 }
