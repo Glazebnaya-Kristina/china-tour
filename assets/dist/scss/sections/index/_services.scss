@@ -12,9 +12,13 @@
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 90% auto;
+  @media (min-width: $screen-lg) {
+    background-image: none;
+    background-position: top left 183px;
+    background-size: 86% auto;
+  }
   @media (min-width: $screen-xl) {
     padding: 164px 0 68px;
-    background-image: none;
     background-color: transparent;
   }
 
@@ -48,6 +52,13 @@
 
   &__inner {
     @include container;
+    @media (min-width: $screen-md) {
+      width: 100%;
+      padding: 0;
+    }
+    @media (min-width: $screen-lg) {
+      @include container;
+    }
   }
 
   &__title {
@@ -59,44 +70,107 @@
     }
   }
 
+  &__list{
+    li{
+      &:nth-child(1){
+        #{$block-name}__link-wrapper{
+          &:after{
+            width: 136px;
+            height: 156px;
+            background-image: url('../img/home/servicessletter1.png');
+          }
+          &:before {
+            background-image: url('../img/home/services-img1-hover.png');
+          }
+        }
+      }
+      &:nth-child(2){
+        #{$block-name}__link-wrapper{
+          &:after{
+            top: 27%;
+            left: 50%;
+            transform: translate(-45%, 0);
+            width: 162px;
+            height: 156px;
+            background-image: url('../img/home/servicesLetter2.png');
+          }
+          &:before {
+            background-image: url('../img/home/services-img2-hover.png');
+          }
+        }
+      }
+      &:nth-child(3){
+        #{$block-name}__link-wrapper{
+          &:after{
+            width: 131px;
+            height: 154px;
+            background-image: url('../img/home/servicesLetter3.png');
+          }
+          &:before {
+            background-image: url('../img/home/services-img3-hover.png');
+          }
+        }
+      }
+      &:nth-child(4){
+        #{$block-name}__link-wrapper{
+          &:after{
+            top: 27%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 192px;
+            height: 154px;
+            background-image: url('../img/home/servicesLetter4.png');
+          }
+          &:before {
+            background-image: url('../img/home/services-img4-hover.png');
+          }
+        }
+      }
+    }
+  }
+
   &__link-wrapper {
     position: relative;
+    @media (min-width: $screen-xl) {
+      width: 320px;
+    }
 
     &:before {
       @include pseudo;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 143px;
-      height: 156px;
-      background-image: url('../img/home/t.png');
+      left: 0;
+      top: 1px;
+      width: 100%;
+      height: 100%;
       background-repeat: no-repeat;
       background-position: center;
       transition: $transition-time;
+      opacity: 0;
+      z-index: -1;
     }
 
     &:after {
       @include pseudo;
-      z-index: -1;
-      opacity: 0;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('../img/home/servicesLetter1.png');
+      z-index: 1;
+      opacity: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background-repeat: no-repeat;
       background-position: center;
       transition: $transition-time;
     }
 
     &--active {
+
       &:after {
-        z-index: 0;
-        opacity: 1;
+        z-index: -1;
+        opacity: 0;
       }
 
       &:before {
-        opacity: 0;
+        opacity: 1;
+        z-index: 0;
+        transition: background-image .3s all;
       }
 
       + p i{
@@ -174,6 +248,10 @@
       transition: $transition-time;
       @media (min-width: $screen-xl) {
         margin-top: 13px;
+      }
+
+      &:hover{
+        color: $color-blue;
       }
     }
 
