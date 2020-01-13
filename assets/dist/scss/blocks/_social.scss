@@ -6,13 +6,24 @@
   align-items: center;
 
   a{
-    padding: 6px 4px;
-    border-radius: 50%;
-    background-color: $color-blue;
+    //padding: 6px 4px;
+    //border-radius: 50%;
+    //background-color: $color-blue;
+    //&:hover,
+    //&:focus {
+    //  outline: none;
+    //  background-color: $color-yellow;
+    //}
     &:hover,
     &:focus {
       outline: none;
-      background-color: $color-yellow;
+      i{
+        color: $color-yellow;
+      }
+    }
+    i{
+      color: $color-blue;
+      font-size: 30px;
     }
   }
 

@@ -158,6 +158,21 @@
       }
     }
 
+    .icon-round-table-1{
+      position: relative;
+      width: 100px;
+      height: 72px;
+      &::before{
+        position: absolute;
+        font-size: 108px;
+        left: -26px;
+        top: -10px;
+      }
+    }
+
+
+
+
     h3{
       margin: 0;
       font-size: 16px;

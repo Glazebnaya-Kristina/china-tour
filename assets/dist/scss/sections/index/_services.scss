@@ -6,7 +6,7 @@
   $block-name: &; // #{$block-name}__element
 
   position: relative;
-  padding: 22px 0;
+  padding: 22px 0 19px;
   background-color: #f7f7f7;
   background-image: url('../img/lines.png');
   background-repeat: no-repeat;
@@ -193,13 +193,13 @@
       position: relative;
       display: flex;
       justify-content: center;
-      padding-bottom: 85px;
+      padding-bottom: 87px;
       @media (min-width: $screen-xl) {
         padding-bottom: 94px;
       }
 
       &:not(:first-child) {
-        margin-top: 40px;
+        margin-top: 39px;
         @media (min-width: $screen-md) {
           margin-top: 0;
         }

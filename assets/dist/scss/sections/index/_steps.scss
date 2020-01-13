@@ -87,6 +87,11 @@
 
       &:nth-child(2),
       &:nth-child(6){
+        .steps__text{
+          @media (min-width: $screen-xl) {
+            margin-top: 26px;
+          }
+        }
         &:after{
           @media (min-width: $screen-xl) {
             bottom: 25px;
@@ -235,6 +240,7 @@
   }
 
   &__arrow{
+    margin-top: 5px;
     color: $color-blue;
     outline: none;
     &:hover{
