@@ -48,7 +48,9 @@ module.exports = function (grunt) {
                'markup/js/jcf.radio.min.js': ['assets/dist/js/plugin/jcf.radio.js'],
                'markup/js/jcf.min.js': ['assets/dist/js/plugin/jcf.js'],
                'markup/js/script.min.js': ['assets/dist/js/script.js'],
-               'markup/js/home.min.js': ['assets/dist/js/home.js']
+               'markup/js/home.min.js': ['assets/dist/js/home.js'],
+               'markup/js/reviews.min.js': ['assets/dist/js/reviews.js'],
+               'markup/js/scheme-work.min.js': ['assets/dist/js/scheme-work.js']
             }
          }
       },

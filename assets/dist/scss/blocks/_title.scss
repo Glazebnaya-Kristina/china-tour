@@ -5,4 +5,10 @@
   @media (min-width: $screen-lg) {
     font-size: 32px;
   }
+
+  &--big{
+    @media (min-width: $screen-lg) {
+      font-size: 36px;
+    }
+  }
 }
