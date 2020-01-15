@@ -1,0 +1,27 @@
+@import "blocks/contacts";
+// стили шаблонов
+@import "templates/header";
+@import "templates/footer";
+// поключения секций
+@import "sections/contacts/contacts";
+
+
+//@media (min-width: $screen-sm) {}
+//@media (min-width: $screen-md) {}
+//@media (min-width: $screen-lg) {}
+//@media (min-width: $screen-xl) {}
+
+
+.page{
+  &__body{
+    position: relative;
+    background-image: url('../img/lines.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    @media (min-width: $screen-lg) {
+      background-image: url('../img/lines-inner2.png');
+      background-position: top center;
+      background-size: 86.5% 100%;
+    }
+  }
+}
