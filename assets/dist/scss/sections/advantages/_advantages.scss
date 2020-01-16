@@ -1,4 +1,4 @@
-.advantages{
+.advantages {
   $block-name: &; // #{$block-name}__element
 
   padding: 0 0 85px;
@@ -6,11 +6,11 @@
     padding: 0 0 89px;
   }
 
-  &__inner{
+  &__inner {
     position: relative;
   }
 
-  &__title{
+  &__title {
     position: absolute;
     left: -9px;
     bottom: 0;
@@ -32,7 +32,227 @@
     }
   }
 
-  &__main{
+   &__item-wrapper{
+     overflow: hidden;
+     @media (min-width: $screen-md) {
+       //display: flex;
+       //flex-direction: row-reverse;
+       transition: $transition-time;
+     }
+   }
+
+  &__carousel {
+    position: relative;
+
+    @media (min-width: $screen-md) {
+      overflow: hidden;
+      margin-top: 40px;
+      padding-bottom: 70px;
+    }
+
+    &:after {
+      @include pseudo;
+      display: none;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      width: 100%;
+      height: 95%;
+      background-color: rgba(#f0f7fc, .7);
+      @media (min-width: $screen-md) {
+        display: block;
+      }
+    }
+
+    &:before{
+      @include pseudo;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/lines.png');
+      background-repeat: no-repeat;
+      background-position: top center;
+      opacity: .3;
+    }
+
+    li {
+      position: relative;
+      padding-bottom: 58px;
+      background-color: rgba(#f0f7fc, .7);
+      transition: $transition-time;
+      outline: none;
+      @media (min-width: $screen-md) {
+        transform: scale(.8);
+        width: 580px;
+        padding-bottom: 90px;
+        background-color: transparent;
+      }
+      @media (min-width: $screen-lg) {
+        width: 700px;
+      }
+      @media (min-width: $screen-xl) {
+        padding-bottom: 138px;
+      }
+      @media (min-width: 1800px) {
+        width: 1200px;
+      }
+    }
+
+    img {
+      @include img;
+      height: 280px;
+      margin-left: 15px;
+      transition: $transition-time;
+      @media (min-width: $screen-md) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+      }
+    }
+
+    .slick-list {
+      @media (min-width: $screen-md) {
+        overflow: hidden;
+      }
+    }
+
+    .slick-track {
+      @media (min-width: $screen-md) {
+        padding-top: 26px;
+      }
+    }
+
+    .slick-center {
+      transform: scale(1.1);
+      img {
+        @media (min-width: $screen-md) {
+          width: 42%;
+          top: 0;
+          right: 0;
+          left: auto;
+        }
+        @media (min-width: $screen-lg) {
+          width: 52%;
+        }
+        @media (min-width: 1800px) {
+          right: 20px;
+          width: 64%;
+          height: 459px;
+        }
+      }
+    }
+
+    .slick-active:not(.slick-center){
+      @media (min-width: $screen-md) {
+        @include mask(100%, 100%);
+        opacity: .5;
+      }
+      @media (min-width: $screen-xl) {
+        margin-top: 25px;
+        padding-bottom: 100px;
+      }
+
+      img{
+        @media (min-width: $screen-xl) {
+          width: 96%;
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 30px;
+    padding: 0 15px;
+    @media (min-width: $screen-md) {
+      max-width: 360px;
+      width: 100%;
+    }
+    @media (min-width: 1800px) {
+      max-width: 383px;
+      padding-top: 1px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      @media (min-width: 1800px) {
+        margin-top: 83px;
+        font-size: 36px;
+        line-height: 46px;
+        letter-spacing: -2px;
+      }
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      color: $color-grey;
+      @media (min-width: $screen-xl) {
+        margin-top: 24px;
+      }
+      @media (min-width: 1800px) {
+        max-width: 306px;
+      }
+    }
+  }
+
+  &__step-count{
+    @media (min-width: $screen-md) {
+      width: 55px;
+      font-size: 55px;
+      font-weight: 900;
+      color: $color-blue;
+    }
+    span{
+      @media (min-width: $screen-md) {
+        display: block;
+        margin-top: -32px;
+        font-size: 20px;
+        text-align: right;
+        font-weight: 500;
+        color: $color-grey;
+      }
+    }
+  }
+
+  &__controls{
+    @media (min-width: $screen-md) {
+      position: relative;
+      max-width: 155px;
+      margin-top: -110px;
+      padding: 0 45px 0 53px;
+    }
+    @media (min-width: $screen-lg) {
+      margin-left: 37%;
+    }
+    @media (min-width: $screen-xl) {
+      margin-top: -138px;
+      margin-left: 30.3%;
+    }
+  }
+
+  &__arrow{
+    &--prev{
+      @media (min-width: $screen-md) {
+        position: absolute;
+        top: 11px;
+        left: -6px;
+      }
+    }
+    &--next{
+      @media (min-width: $screen-md) {
+        position: absolute;
+        bottom: -26px;
+        right: 9px;
+      }
+    }
+  }
+
+  &__main {
     @include container;
     margin-top: 55px;
     @media (min-width: $screen-lg) {
@@ -41,7 +261,7 @@
       align-items: center;
     }
     @media (min-width: $screen-xl) {
-      margin-top: 165px;
+      margin-top: 148px;
       align-items: flex-start;
     }
     @media (min-width: 1800px) {
@@ -49,16 +269,19 @@
     }
   }
 
-  &__description{
+  &__description {
     position: relative;
+    z-index: 1;
     padding: 30px 15px 34px 0;
+    background-color: #fff;
     @media (min-width: $screen-xl) {
       width: 100%;
       max-width: 502px;
       margin-left: 40px;
       padding: 54px 31px 48px 0;
     }
-    &:after{
+
+    &:after {
       @include pseudo;
       right: 0;
       top: 0;
@@ -70,19 +293,20 @@
       }
     }
 
-    &:before{
+    &:before {
       @include pseudo;
       top: 15px;
       right: -15px;
       z-index: -1;
       width: 90%;
       height: 100%;
-      background-color: rgba(#f0f7fc,.7);
+      background-color: rgba(#f0f7fc, .7);
       @media (min-width: $screen-xl) {
         width: 77%;
       }
     }
-    p{
+
+    p {
       position: relative;
       z-index: 1;
       font-size: 18px;
@@ -90,7 +314,8 @@
       @media (min-width: $screen-xl) {
         font-size: 24px;
       }
-      &:after{
+
+      &:after {
         @include pseudo;
         top: 50%;
         transform: translateY(-50%);
@@ -113,13 +338,14 @@
         }
       }
     }
-    strong{
+
+    strong {
       font-weight: 700;
       color: $color-blue;
     }
   }
 
-  &__wrapper-list{
+  &__wrapper-list {
     margin-top: 51px;
     @media (min-width: $screen-lg) {
       margin-left: 41px;
@@ -129,19 +355,22 @@
       max-width: 681px;
       margin-top: 12px;
     }
-    h3{
+
+    h3 {
       margin: 0;
       font-size: 20px;
       font-weight: 700;
     }
   }
 
-  &__list{
+  &__list {
     margin-top: 27px;
     line-height: 27px;
-    li{
+
+    li {
       padding-left: 31px;
-      &:not(:first-child){
+
+      &:not(:first-child) {
         margin-top: 30px;
         @media (min-width: $screen-xl) {
           margin-top: 28px;
