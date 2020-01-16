@@ -166,20 +166,29 @@
     margin-top: 30px;
     padding: 0 15px;
     @media (min-width: $screen-md) {
-      max-width: 360px;
+      max-width: 339px;
       width: 100%;
+      padding-top: 1px;
     }
+    //@media (min-width: $screen-xl) {
+    //
+    //}
     @media (min-width: 1800px) {
       max-width: 383px;
-      padding-top: 1px;
     }
 
     h2 {
       margin: 0;
       font-size: 28px;
+      line-height: 32px;
       font-weight: 700;
-      @media (min-width: 1800px) {
+      @media (min-width: $screen-md) {
+        margin-top: 40px;
+      }
+      @media (min-width: $screen-xl) {
         margin-top: 83px;
+      }
+      @media (min-width: 1800px) {
         font-size: 36px;
         line-height: 46px;
         letter-spacing: -2px;
@@ -188,9 +197,13 @@
 
     p {
       margin-top: 20px;
+      padding-right: 79px;
       font-size: 18px;
       font-weight: 500;
       color: $color-grey;
+      @media (min-width: $screen-md) {
+        padding-right: 0;
+      }
       @media (min-width: $screen-xl) {
         margin-top: 24px;
       }
