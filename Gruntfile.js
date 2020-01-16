@@ -51,7 +51,8 @@ module.exports = function (grunt) {
                'markup/js/home.min.js': ['assets/dist/js/home.js'],
                'markup/js/reviews.min.js': ['assets/dist/js/reviews.js'],
                'markup/js/scheme-work.min.js': ['assets/dist/js/scheme-work.js'],
-               'markup/js/contacts.min.js': ['assets/dist/js/contacts.js']
+               'markup/js/contacts.min.js': ['assets/dist/js/contacts.js'],
+               'markup/js/advantages.min.js': ['assets/dist/js/advantages.js']
             }
          }
       },

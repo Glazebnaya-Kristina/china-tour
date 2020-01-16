@@ -3,7 +3,10 @@ $(document).ready(function () {
 
       var bluhera = {lat: 22.3230823, lng: 114.1680546};
 
-      var map = new google.maps.Map(document.getElementById('map'), {zoom: 14, center: bluhera});
+      var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 14,
+         center: bluhera
+      });
 
       var marker1 = new google.maps.Marker({
          position: bluhera, map: map,icon: '../img/location.png'
@@ -55,11 +58,6 @@ $(document).ready(function () {
       });
 
       infoBlu.open(map, marker1);
-
-      //Создаем прослушивание, по клику на маркер - открыть инфо-окно infowindow
-      // marker1.addListener('click', function() {
-      //    infoBlu.open(map, marker1);
-      // });
    }
 
 

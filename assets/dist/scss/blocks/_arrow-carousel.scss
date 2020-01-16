@@ -1,0 +1,17 @@
+@import "../helper/variables";
+@import "../helper/mixins";
+
+.arrow-carousel{
+  color: $color-blue;
+  outline: none;
+
+  &:hover {
+    color: $color-yellow;
+  }
+
+  &--prev {
+    i {
+      transform: rotate(-180deg);
+    }
+  }
+}
