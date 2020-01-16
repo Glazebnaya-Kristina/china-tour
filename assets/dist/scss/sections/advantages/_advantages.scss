@@ -74,6 +74,12 @@
       background-repeat: no-repeat;
       background-position: top center;
       opacity: .3;
+      @media (min-width: $screen-lg) {
+        height: 91%;
+        background-image: url('../img/advantages/lines-bg.png');
+        background-size: 86.5% 100%;
+        opacity: .8;
+      }
     }
 
     li {
