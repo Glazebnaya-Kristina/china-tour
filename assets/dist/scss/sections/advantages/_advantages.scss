@@ -41,6 +41,8 @@
      }
    }
 
+
+
   &__carousel {
     position: relative;
 
@@ -176,9 +178,7 @@
       width: 100%;
       padding-top: 1px;
     }
-    //@media (min-width: $screen-xl) {
-    //
-    //}
+
     @media (min-width: 1800px) {
       max-width: 383px;
     }

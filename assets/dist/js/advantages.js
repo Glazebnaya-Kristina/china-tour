@@ -25,14 +25,6 @@ $(document).ready(function () {
                variableWidth: true
             }
          }
-         // {
-         //    breakpoint: 1022,
-         //    settings: {
-         //       slidesToShow: 3,
-         //       centerMode: true,
-         //       variableWidth: true
-         //    }
-         // }
       ]
    });
 });
