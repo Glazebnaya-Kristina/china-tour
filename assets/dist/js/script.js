@@ -58,6 +58,36 @@ $(document).ready(function () {
 
       });
    }
+
+
+   var hrefAnchor = $('.navigation__list li:first-child').children('a');
+   var logoLink = $('.logo');
+
+   if ($('body').hasClass('page__body--index')){
+      logoLink.attr('href', '');
+      logoLink.replaceWith('<p class="logo">\n' +
+         '      <img src="../img/logo.png" alt="Логотип">\n' +
+         '    </p>');
+      hrefAnchor.attr('href', '#about-us');
+      hrefAnchor.addClass('js-anchor');
+
+      var $anchor2 = $( '.js-anchor' );
+
+      if ( $anchor2.length ) {
+         $anchor2.on('click', function(event) {
+
+            event.preventDefault();
+            var $that = $( this ), hb = $('body, html');
+
+            if ( $that.is( 'button' ) ) {
+               hb.stop().animate({ scrollTop: $( '.' + $that.data( 'id' ) ).offset().top }, 1000, 'swing');
+            } else if ( $that.is( 'a' ) ) {
+               hb.stop().animate({ scrollTop: $( '.' + $that.attr( 'href' ).replace('#', '') ).offset().top }, 1000, 'swing');
+            }
+
+         });
+      }
+   }
 });
 
 // !function(e){"function"!=typeof e.matches&&(e.matches=e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||function(e){for(var t=this,o=(t.document||t.ownerDocument).querySelectorAll(e),n=0;o[n]&&o[n]!==t;)++n;return Boolean(o[n])}),"function"!=typeof e.closest&&(e.closest=function(e){for(var t=this;t&&1===t.nodeType;){if(t.matches(e))return t;t=t.parentNode}return null})}(window.Element.prototype);
