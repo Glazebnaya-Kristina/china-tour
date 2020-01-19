@@ -1,0 +1,18 @@
+// стили шаблонов
+@import "templates/header";
+@import "templates/footer";
+// поключения секций
+@import "sections/404/page-404";
+
+
+//@media (min-width: $screen-sm) {}
+//@media (min-width: $screen-md) {}
+//@media (min-width: $screen-lg) {}
+//@media (min-width: $screen-xl) {}
+
+.page{
+
+  .footer{
+    border-top: none;
+  }
+}
