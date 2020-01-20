@@ -9,9 +9,6 @@
   padding: 46px 0 60px;
   background: rgb(247,247,247);
   background: linear-gradient(180deg, rgba(247,247,247,1) 41%, rgba(240,247,252,1) 41%);
-  @media (min-width: $screen-lg) {
-    background: linear-gradient(90deg, rgba(247,247,247,1) 38%, rgba(240,247,252,1) 38%);
-  }
   @media (min-width: $screen-xl) {
     padding: 86px 0 60px;
 

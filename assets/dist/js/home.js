@@ -191,40 +191,58 @@ $(document).ready(function () {
       //скорость анимации поднимание и опускание шторки
       console.log(newHeight);
    });
-});
 
-function validate() {
-   var userName = document.querySelector('#userName'),
-      userEmail = document.querySelector('#userEmail'),
-      userMassage = document.querySelector('#userMassage'),
-      communicationInput = document.querySelectorAll('.communication__feedback-input'),
-      textError = document.querySelectorAll('.text-error');
 
-   var button = document.querySelector('.communication__button')
+   $('.main-banner__button-video--desc').click(function () {
+      addFrame();
+   });
 
-   if (!userName.value || !userEmail.value || !userMassage.value) {
-      communicationInput.forEach(function (item) {
-         item.classList.add('error');
-      });
-      textError.forEach(function (item) {
-         item.classList.add('text-error--active');
+   $('.main-banner__button-video--mob').click(function () {
+      addFrame();
+   });
+
+   $('.modal__overlay').on('click', function () {
+      $('.video-youtube__content').html('');
+   });
+
+
+   function addFrame() {
+      var dataYoutube = $('.video-youtube__content').attr('data-youtube');
+      $('.video-youtube__content').html('<iframe src="https://www.youtube.com/embed/' + dataYoutube + '?autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+   }
+
+
+   // валидация формы
+   $('#form').submit(function() {
+
+      if (!document.form.name.value || !document.form.email.value || !document.form.textarea.value ) {
+         $('.communication__feedback-input').addClass('error');
+         $('.text-error').addClass('text-error--active');
+         $(this).find('input').val('');
+         $('#form').trigger('reset');
+         valid = false;
+         return valid;
+      }
+      $.ajax({
+         type: "POST",
+         url: "mail.php",
+         data: $(this).serialize()
+      }).done(function() {
+         $(this).find('input').val('');
+         $('#form').trigger('reset');
+         $('.communication__feedback-input').removeClass('error');
+         $('.text-error').removeClass('text-error--active');
+         openModal();
       });
 
       return false;
-   } else {
-      button.classList.add('js-open-modal');
+   });
+
+   function openModal() {
+      $('.modal').addClass('modal--opened');
+      $('.popup[data-modal="thanks-registration"]').addClass('popup--opened');
+      $('.js-overlay-modal').addClass('modal__overlay--opened');
+      $('body').addClass('hidden');
    }
 
-   return true;
-}
-
-
-var buttomForm = document.querySelector('.communication__button');
-buttomForm.addEventListener('click', function (e) {
-
-   if (validate()) {
-      validate();
-   } else {
-      e.preventDefault();
-   }
 });

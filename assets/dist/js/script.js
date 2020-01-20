@@ -89,14 +89,6 @@ $(document).ready(function () {
       }
    }
 
-   $('a[data-modal="video-youtube"]').click(function () {
-      var dataYoutube = $('.video-youtube__content').attr('data-youtube');
-      $('.video-youtube__content').html('<iframe id="player" src="https://www.youtube.com/embed/' + dataYoutube + '?autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-   });
-
-   $('.modal__overlay--opened').click(function () {
-      $('.video-youtube__content').html('');
-   })
 });
 
 !function (e) {
@@ -123,35 +115,23 @@ document.addEventListener('DOMContentLoaded', function () {
       modalWrapp = document.querySelector('.modal');
 
 
-   /* Перебираем массив кнопок */
+
    modalButtons.forEach(function (item) {
 
-      /* Назначаем каждой кнопке обработчик клика */
       item.addEventListener('click', function (e) {
-
-         /* Предотвращаем стандартное действие элемента. Так как кнопку разные
-            люди могут сделать по-разному. Кто-то сделает ссылку, кто-то кнопку.
-            Нужно подстраховаться. */
          e.preventDefault();
-
-         /* При каждом клике на кнопку мы будем забирать содержимое атрибута data-modal
-            и будем искать модальное окно с таким же атрибутом. */
          var modalId = this.getAttribute('data-modal'),
             modalElem = document.querySelector('.popup[data-modal="' + modalId + '"]');
 
-
-         /* После того как нашли нужное модальное окно, добавим классы
-            подложке и окну чтобы показать их. */
          modalElem.classList.add('popup--opened');
          overlay.classList.add('modal__overlay--opened');
          modalWrapp.classList.add('modal--opened');
          document.querySelector('body').classList.add('hidden');
-      }); // end click
+      });
 
-   }); // end foreach
+   });
 
    closeButtons.forEach(function (item) {
-
       item.addEventListener('click', function (e) {
          var parentModal = this.closest('.popup');
 
@@ -161,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('.hidden').classList.remove('hidden');
       });
 
-   }); // end foreach
+   });
 
 
    document.body.addEventListener('keyup', function (e) {
@@ -174,14 +154,13 @@ document.addEventListener('DOMContentLoaded', function () {
          document.querySelector('.popup--opened').classList.remove('popup--opened');
          document.querySelector('.hidden').classList.remove('hidden');
       }
-      ;
    }, false);
 
 
    overlay.addEventListener('click', function () {
       document.querySelector('.modal--opened').classList.remove('modal--opened');
+      document.querySelector('.modal__overlay--opened').classList.remove('modal__overlay--opened');
       document.querySelector('.popup--opened').classList.remove('popup--opened');
       document.querySelector('.hidden').classList.remove('hidden');
-      this.classList.remove('.modal__overlay--opened');
    });
-}); // end ready
+});

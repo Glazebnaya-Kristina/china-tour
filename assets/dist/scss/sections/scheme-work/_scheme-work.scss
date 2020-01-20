@@ -52,6 +52,9 @@
     z-index: -1;
     width: 100%;
     height: 558px;
+    @media (min-width: $screen-sm) {
+    height: 42%;
+  }
     @media (min-width: $screen-md) {
       height: 278px;
     }
