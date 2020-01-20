@@ -6,19 +6,19 @@
   padding: 0;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 
   &:hover,
   &:focus{
     outline: none;
-    //color: $color-gold;
+    i{
+      color: $color-black;
+    }
   }
 
   i{
     color: $color-grey;
     font-size: 13px;
-    //@media (min-width: $screen-md) {
-    //  font-size: 38px;
-    //}
   }
 
   &__description{
