@@ -67,7 +67,9 @@
     display: inline-flex;
     color: $color-blue;
     font-weight: 700;
-    border-bottom: 1px solid $color-blue;
+    text-decoration: underline;
+    text-decoration-color: rgba($color-blue,0.3);
+
     i{
       position: absolute;
       right: -29px;
@@ -78,7 +80,8 @@
     &:hover,
     &:focus{
       color: $color-yellow;
-      border-bottom: 1px solid $color-yellow;
+      outline: none;
+      text-decoration-color: rgba($color-yellow,0.3);
       i{
         color: $color-yellow;
       }
