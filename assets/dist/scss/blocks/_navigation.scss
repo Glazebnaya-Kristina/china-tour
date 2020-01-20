@@ -54,7 +54,6 @@
     > li {
       > a {
         font-weight: 500;
-        //border-bottom: 1px solid transparent;
         @media (min-width: $screen-lg) {
           font-size: 18px;
         }
@@ -62,8 +61,6 @@
         &:hover,
         &:focus {
           outline: none;
-          //color: $color-blue;
-          //border-bottom: 1px solid $color-blue;
           color: $color-blue;
           text-decoration: underline;
           text-decoration-color: rgba($color-blue, .3);
@@ -110,16 +107,12 @@
 
       a {
         font-size: 14px;
-        //border-bottom: 1px solid transparent;
         @media (min-width: $screen-lg) {
           font-size: 16px;
         }
 
         &:hover,
         &:focus {
-          //outline: none;
-          //color: $color-yellow;
-          //border-bottom: 1px solid $color-yellow;
           color: $color-yellow;
           outline: none;
           text-decoration: underline;
@@ -143,6 +136,11 @@
     outline: none;
     cursor: pointer;
 
+    &:hover,
+    &:focus{
+      color: $color-black;
+    }
+
     @media (min-width: $screen-md) {
       position: relative;
       left: auto;
@@ -163,8 +161,6 @@
     display: block;
     width: 100%;
     height: 100%;
-    //background-color: rgba($black, .3);
-    //animation: opacity 0.5s ease-in-out;
 
     #{$block-name}__inner {
       animation: slide-down 0.5s ease-in-out;

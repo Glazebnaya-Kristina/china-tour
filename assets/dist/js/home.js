@@ -192,3 +192,39 @@ $(document).ready(function () {
       console.log(newHeight);
    });
 });
+
+function validate() {
+   var userName = document.querySelector('#userName'),
+      userEmail = document.querySelector('#userEmail'),
+      userMassage = document.querySelector('#userMassage'),
+      communicationInput = document.querySelectorAll('.communication__feedback-input'),
+      textError = document.querySelectorAll('.text-error');
+
+   var button = document.querySelector('.communication__button')
+
+   if (!userName.value || !userEmail.value || !userMassage.value) {
+      communicationInput.forEach(function (item) {
+         item.classList.add('error');
+      });
+      textError.forEach(function (item) {
+         item.classList.add('text-error--active');
+      });
+
+      return false;
+   } else {
+      button.classList.add('js-open-modal');
+   }
+
+   return true;
+}
+
+
+var buttomForm = document.querySelector('.communication__button');
+buttomForm.addEventListener('click', function (e) {
+
+   if (validate()) {
+      validate();
+   } else {
+      e.preventDefault();
+   }
+});

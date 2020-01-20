@@ -619,27 +619,27 @@
                         <li>
                             <label class="label">
               <span class="label__name">Ваше имя</span>
-              <input type="text" class="input communication__feedback-input" required>
+              <input id="userName" type="text" class="input communication__feedback-input">
               <span class="text-error">Неверное Имя</span>
             </label>
                         </li>
                         <li>
                             <label class="label">
               <span class="label__name">Ваша почта</span>
-              <input type="email" class="input communication__feedback-input" required>
+              <input id="userEmail" type="email" class="input communication__feedback-input">
               <span class="text-error">Неверный адрес почты</span>
             </label>
                         </li>
                         <li>
                             <label class="label">
               <span class="label__name">Ваше сообщение</span>
-              <textarea class="input input--textarea communication__feedback-input" required></textarea>
+              <textarea id="userMassage" class="input input--textarea communication__feedback-input"></textarea>
               <span class="text-error">Неведенное сообщение</span>
             </label>
                         </li>
                     </ul>
                     <div class="communication__feedback-wrapper">
-                        <button type="button" class="button button--bg button--big communication__button js-open-modal" data-modal="thanks-registration">Отправить
+                        <button type="submit" class="button button--bg button--big communication__button" data-modal="thanks-registration">Отправить
           </button>
                         <p class="communication__wrapper-policy">
                             <span>Нажимая на кнопку, вы соглашаетесь с</span>
@@ -862,8 +862,10 @@
         <!-- Модальное окно Видео -->
         <div class="popup video-youtube" data-modal="video-youtube">
             <div class="modal__dialog video-youtube__dialog">
-                <div class="modal__content video-youtube__content">
-                    <iframe src="https://www.youtube-nocookie.com/embed/Bey4XXJAqS8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="modal__content video-youtube__content" data-youtube="Bey4XXJAqS8">
+                    <!--        <iframe src="https://www.youtube-nocookie.com/embed/Bey4XXJAqS8" frameborder="0"-->
+                    <!--                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+                    <!--                allowfullscreen></iframe>-->
                 </div>
             </div>
         </div>
