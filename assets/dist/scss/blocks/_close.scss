@@ -1,23 +1,24 @@
 .close{
+  position: absolute;
+  right: 18px;
+  top: 21px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
 
-  &--icon{
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    transition: $transition-time;
-    &:hover,
-    &:focus{
-      outline: none;
-      //color: $color-gold;
-    }
-    i{
-      font-size: 22px;
-      @media (min-width: $screen-md) {
-        font-size: 38px;
-      }
-    }
+  &:hover,
+  &:focus{
+    outline: none;
+    //color: $color-gold;
+  }
+
+  i{
+    color: $color-grey;
+    font-size: 13px;
+    //@media (min-width: $screen-md) {
+    //  font-size: 38px;
+    //}
   }
 
   &__description{

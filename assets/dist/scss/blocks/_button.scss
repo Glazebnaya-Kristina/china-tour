@@ -25,12 +25,9 @@
   transition-property: background-color, color, box-shadow;
   transition-duration: $transition-time;
 
-  //&:hover,
-  //&:focus{
-  //  outline: none;
-  //  color: $color-yellow;
-  //  border-bottom: 1px solid $color-yellow;
-  //}
+  &:focus{
+    outline: none;
+  }
 
   &--grey{
     color: #b1b1b1;
